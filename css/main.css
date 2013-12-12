@@ -1,0 +1,50 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic);
+
+body {
+    padding-top: 40px;
+    line-height: 2em;
+}
+
+body *{
+    font-family: 'Open Sans', sans-serif;
+}
+
+header, footer {
+}
+
+header .view {
+    padding: 8px 0;
+}
+
+header .view img {
+    margin-right: 8px;
+}
+
+section {
+    padding-top: 8px;
+}
+
+section .portfolio-item{
+    padding: 2px 0;
+}
+
+
+.affix {
+    position: static;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 768px) {
+    .affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 40px;
+    }
+    .affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+    .affix-bottom,
+    .affix {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}

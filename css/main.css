@@ -14,6 +14,7 @@ header, footer {
 
 header .view {
     padding: 8px 0;
+    margin: 0;
 }
 
 header .view img {
@@ -26,8 +27,15 @@ section {
 
 section .portfolio-item{
     padding: 2px 0;
+    margin: 0;
 }
-
+section .portfolio-item-description{
+    margin: -8px 0 0 0;
+}
+section blockquote{
+    padding: 0 4px;
+    margin: 6px 0 12px 11px;
+}
 
 .affix {
     position: static;

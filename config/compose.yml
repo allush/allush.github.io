@@ -1,0 +1,14 @@
+#frontend:
+#  image: idfly/node-ruby
+#  container_name: frontend.beeqb.local
+#  working_dir: /app
+#  entrypoint: ['gulp', 'watch']
+#  volumes: ['../../frontend:/app']
+
+http:
+  image: nginx
+  container_name: http.allush.github.io
+  ports: ['80:80']
+  volumes:
+    - './http/allush.github.io.conf:/etc/nginx/conf.d/default.conf'
+    - '..:/app'

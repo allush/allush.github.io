@@ -1,0 +1,17 @@
+[
+  {
+    "place": "Penza state university",
+    "periods": [
+      {
+        "from": "09.2006",
+        "to": "06.2011",
+        "description": "Computer Science. Mathematician-programmer."
+      },
+      {
+        "from": "10.2011",
+        "to": "10.2014",
+        "description": "Postgraduate. PhD in Technical Sciences"
+      }
+    ]
+  }
+]

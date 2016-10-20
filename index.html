@@ -1,215 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
-    <title>Разработка веб-приложений - Алексей Лушников</title>
+    <title>{{ translate['title'] }}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name='yandex-verification' content='430352176a68966d'/>
 
-    <meta name="description" content="Разработка веб-приложений. Фрилансер Алексей Лушников.">
-    <meta name="keywords" content="Веб-приложение, сайт, фрилансер, Алексей Лушников.">
-    <meta name="author" content="Алексей Лушников">
+    <meta name="description" content="{{ translate['description'] }}">
+    <meta name="keywords" content="{{ translate['keywords'] }}">
+    <meta name="author" content="{{ translate['author'] }}">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="src/css/main.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1">
+        <div class="col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1" ng-controller="SidebarCtrl">
             <header data-spy="affix">
-                <img class="img-circle" src="images/iam.jpg">
+                <img class="img-circle" src="src/images/iam.jpg">
 
-                <h2>Alexey Lushnikov</h2>
-                <h5>full stack engineer</h5>
+                <h2>{{ translate['alexey_lushnikov'] }}</h2>
+                <h5>{{ translate['full_stack_engineer'] }}</h5>
                 <br>
 
                 <p class="view">
-                    <img src="images/github.png">
+                    <img src="src/images/github.png">
                     <a href="https://github.com/allush" target="_blank">GitHub</a>
                 </p>
 
                 <p class="view">
-                    <img src="images/twitter.png">
+                    <img src="src/images/twitter.png">
                     <a href="https://twitter.com/alexeylushnikov" target="_blank">Twitter</a>
                 </p>
 
                 <p class="view">
-                    <img src="images/skype.png">
+                    <img src="src/images/skype.png">
                     <a href="skype:al.lushnikov" target="_blank">al.lushnikov</a>
                 </p>
             </header>
         </div>
 
-        <div class="col-md-6 col-sm-6">
+        <div class="col-md-6 col-sm-6" ng-controller="ContentCtrl">
+
+            <div class="btn-group" role="group">
+                <button type="button"
+                        class="btn btn-default btn-xs"
+                        ng-class="{'active': lang == 'ru'}"
+                        ng-click="setLang('ru')" >
+                    RU
+                </button>
+                <button type="button"
+                        class="btn btn-default btn-xs"
+                        ng-class="{'active': lang == 'en'}"
+                        ng-click="setLang('en')">
+                    EN
+                </button>
+            </div>
+
             <section>
-                <h3 style="margin-top: 0;">Резюме</h3>
+                <h3 style="margin-top: 0;">{{ translate['resume'] }}</h3>
 
-                <p>Занимаюсь разработкой веб-приложений более 5-ти лет.</p>
-
-                <p>
-                    Стараюсь постоянно развиваться и учиться, применяя в своей работе наиболее эффективные
-                    методики программирования и проектирования, а также современные инструменты.
-                </p>
-
-                <p>Предпочитаю работу над интересными проектами с нетривиальной логикой.</p>
-
-                <p>
-                    Участник конференций
-                    <a href="http://secon.ru/">SECON 2013-2016</a>,
-                    <a href="http://2016.codefest.ru/">CodeFest 2016</a>.
-                </p>
+                <div ng-include="'src/views/' + lang + '/resume.html'"></div>
 
                 <hr>
-                <h3>Образование</h3>
+                <h3>{{ translate['education'] }}</h3>
 
-                <div class="portfolio-item">
-                    <strong>&raquo; Пензенский государственный университет</strong>
+                <div class="portfolio-item" ng-repeat="education in educations">
+                    <strong>&raquo; {{ education.place }}</strong>
 
-                    <div class="small" style="padding-left: 11px;">
-                        [09.2006 - 06.2011] - Факультет вычислительной техники. Математик-программист.
-                    </div>
-                    <div class="small" style="padding-left: 11px;">
-                        [10.2011 - 10.2014] - Аспирантура. Кандидат технических наук.
+                    <div class="small p-l" ng-repeat="period in education.periods">
+                        [{{ period.from }} - {{ period.to }}] - {{ period.description }}
                     </div>
                 </div>
 
                 <hr>
-                <h3>Работа</h3>
+                <h3>{{ translate['job'] }}</h3>
 
-                <div class="portfolio-item">
-                    <strong>&raquo; IDFLY Labs</strong>
+                <div class="portfolio-item" ng-repeat="job in jobs">
+                    <strong>&raquo; {{ job.name }}</strong>
 
-                    <div class="small" style="padding-left: 11px;">
-                        [06.2014 - н.в] - Team Lead
-                    </div>
-                    <div class="small" style="padding-left: 11px;">
-                        [04.2014 - 05.2016] - Ведуший разработчик
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <strong>&raquo; Пензенский государтвенный университет</strong>
-
-                    <div class="small" style="padding-left: 11px;">
-                        [10.2011 - 04.2015] - Программист
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <strong>&raquo; Фрилансер</strong>
-
-                    <div class="small" style="padding-left: 11px;">
-                        [05.2012 - 04.2014] - Full stack engineer
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <strong>&raquo; ОАО "НПП "Рубин"</strong>
-
-                    <div class="small" style="padding-left: 11px;">
-                        [06.2010 - 02.2012] - Инженер-программист
+                    <div class="small p-l" ng-repeat="position in job.positions">
+                        {{ position }}
                     </div>
                 </div>
 
                 <hr>
-                <h3>Навыки</h3>
+                <h3>{{ translate['skills'] }}</h3>
 
-                <pre>
-                    <code>
-                        Работаю в Linux.
-                        Пишу на языках: Ruby, Go, JS, PHP.
-                        Использую фреймворки: Ruby on Rails, Yii, AngularJS.
-                        В повседневной работе использую: Git, Docker.
-                        Умею выполнять DevOps задачи.
-                        Кодирую в IDE.</code>
-                </pre>
+                <div ng-include="'src/views/' + lang + '/skills.html'"></div>
 
                 <div id="full-stack" class="small">
-                    <div><strong>Languages</strong>: ruby, go, php, javascript, coffee;</div>
-                    <div><strong>Frameworks</strong>: ruby on rails, yii, angularjs;</div>
-                    <div><strong>DevOps</strong>: linux, docker, makefile, apache, nginx, supervisor, etc.;</div>
-                    <div><strong>SQL</strong>: mysql, postgresql;</div>
-                    <div><strong>NoSQL</strong>: redis;</div>
-                    <div><strong>Queue</strong>: rabbitmq;</div>
-                    <div><strong>Search</strong>: elasticsearch, sphinx;</div>
-                    <div><strong>Libs</strong>: underscorejs, jquery, etc.;</div>
-                    <div><strong>VCS</strong>: git;</div>
-                    <div><strong>Package managers</strong>: rubygems, npm, composer, bower;</div>
-                    <div><strong>Deploy</strong>: jenkins, capistrano;</div>
-                    <div><strong>IDE</strong>: phpstorm, atom.</div>
+                    <div ng-repeat="skill in skills">
+                        <strong>{{ skill.group }}</strong>:
+                        <span ng-repeat="item in skill.items">
+                            {{ item + ($last ? ';' : ',') }}
+                        </span>
+                    </div>
                 </div>
 
             </section>
         </div>
     </div>
-</div>
 
-<hr>
-<div class="container">
-    <div class="row">
+    <hr>
+    <div class="row" ng-controller="FooterCtrl">
         <div class="col-md-11 col-md-offset-1 col-sm-11 col-sm-offset-1">
             <footer>
-                <p>&copy; 2014-2016 by Alexey Lushnikov </p>
+                <p>&copy; {{ from }} - {{ to }} {{ translate['alexey_lushnikov'] }} </p>
             </footer>
         </div>
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-<script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-26980430-2', 'allush.github.io');
-    ga('send', 'pageview');
-</script>
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter23351782 = new Ya.Metrika({
-                    id: 23351782,
-                    webvisor: true,
-                    clickmap: true,
-                    trackLinks: true,
-                    accurateTrackBounce: true
-                });
-            } catch(e) {
-            }
-        });
-
-        var n = d.getElementsByTagName("script")[0],
-                s = d.createElement("script"),
-                f = function() {
-                    n.parentNode.insertBefore(s, n);
-                };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-
-        if(w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else {
-            f();
-        }
-    })(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript>
-    <div><img src="//mc.yandex.ru/watch/23351782" style="position:absolute; left:-9999px;" alt=""/></div>
-</noscript>
-<!-- /Yandex.Metrika counter -->
-
+<div ng-include="'src/views/counters.html'"></div>
 </body>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-sanitize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-cookies.min.js"></script>
+
+<script src="src/js/app.js"></script>
+<script src="src/js/controllers/content_ctrl.js"></script>
+<script src="src/js/controllers/footer_ctrl.js"></script>
+<script src="src/js/controllers/sidebar_ctrl.js"></script>
+
 </html>

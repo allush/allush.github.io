@@ -1,0 +1,50 @@
+[
+  {
+    "group": "Languages",
+    "items": ["ruby", "go", "php", "javascript", "coffee"]
+  },
+  {
+    "group": "Frameworks",
+    "items": ["ruby on rails", "yii", "angularjs"]
+  },
+  {
+    "group": "DevOps",
+    "items": ["linux", "docker", "makefile", "apache", "nginx", "supervisor", "etc."]
+  },
+  {
+    "group": "SQL",
+    "items": ["mysql", "postgresql"]
+  },
+  {
+    "group": "NoSQL",
+    "items": ["redis"]
+  },
+  {
+    "group": "Queue",
+    "items": ["rabbitmq"]
+  },
+  {
+    "group": "Search",
+    "items": ["elasticsearch", "sphinx"]
+  },
+  {
+    "group": "Libs",
+    "items": ["underscorejs", "jquery", "etc."]
+  },
+  {
+    "group": "VCS",
+    "items": ["git"]
+  },
+  {
+    "group": "Package managers",
+    "items": ["rubygems", "npm", "composer", "bower"]
+  },
+  {
+    "group": "Deploy",
+    "items": ["jenkins", "capistrano"]
+  },
+  {
+    "group": "IDE",
+    "items": ["phpstorm", "atom"]
+  }
+]

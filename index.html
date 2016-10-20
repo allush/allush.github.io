@@ -22,7 +22,7 @@
                 <img class="img-circle" src="src/images/iam.jpg">
 
                 <h2>{{ translate['alexey_lushnikov'] }}</h2>
-                <h5>{{ translate['full_stack_engineer'] }}</h5>
+                <h5>{{ translate['web_engineer'] }}</h5>
                 <br>
 
                 <p class="view">
@@ -91,7 +91,7 @@
 
                 <div ng-include="'src/views/' + lang + '/skills.html'"></div>
 
-                <div id="full-stack" class="small">
+                <div class="small">
                     <div ng-repeat="skill in skills">
                         <strong>{{ skill.group }}</strong>:
                         <span ng-repeat="item in skill.items">
@@ -118,6 +118,7 @@
 </body>
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-sanitize.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-cookies.min.js"></script>

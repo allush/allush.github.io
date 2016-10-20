@@ -44,19 +44,21 @@
 
         <div class="col-md-6 col-sm-6" ng-controller="ContentCtrl">
 
-            <div class="btn-group" role="group">
-                <button type="button"
-                        class="btn btn-default btn-xs"
-                        ng-class="{'active': lang == 'ru'}"
-                        ng-click="setLang('ru')" >
-                    RU
-                </button>
-                <button type="button"
-                        class="btn btn-default btn-xs"
-                        ng-class="{'active': lang == 'en'}"
-                        ng-click="setLang('en')">
-                    EN
-                </button>
+            <div class="text-right">
+                <div class="btn-group" role="group">
+                    <button type="button"
+                            class="btn btn-default btn-xs"
+                            ng-class="{'active': lang == 'ru'}"
+                            ng-click="setLang('ru')">
+                        RU
+                    </button>
+                    <button type="button"
+                            class="btn btn-default btn-xs"
+                            ng-class="{'active': lang == 'en'}"
+                            ng-click="setLang('en')">
+                        EN
+                    </button>
+                </div>
             </div>
 
             <section>

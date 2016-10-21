@@ -2,10 +2,21 @@ var app = angular.module('app', ['ngSanitize', 'ngCookies']);
 
 app.run(function ($rootScope, $window, $cookies, $http){
 
+    $rootScope.translate = {};
+    var loadTranslate = function (lang){
+        $http.get('data/' + lang + '/dict.json')
+            .then(function (response){
+                $rootScope.translate = response.data
+            });
+    };
+
+    $rootScope.$watch('lang', function (){
+        loadTranslate($rootScope.lang)
+    });
+
     $rootScope.setLang = function (lang){
         $rootScope.lang = lang;
         $cookies.put('lang', lang);
-        $window.location.reload();
     };
 
     var lang = $cookies.get('lang') ||
@@ -28,10 +39,4 @@ app.run(function ($rootScope, $window, $cookies, $http){
     }
 
     $rootScope.lang = lang;
-
-    $rootScope.translate = {};
-    $http.get('data/' + lang + '/dict.json')
-        .then(function (response){
-            $rootScope.translate = response.data
-        });
 });

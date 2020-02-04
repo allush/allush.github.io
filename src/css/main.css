@@ -72,3 +72,8 @@ section blockquote {
 .loaded {
     display: block;
 }
+
+.img-round{
+    border-radius: 8px;
+    max-width: 100%;
+}

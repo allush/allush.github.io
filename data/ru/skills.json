@@ -1,19 +1,19 @@
 [
   {
     "group": "Languages",
-    "items": ["ruby", "go", "php", "javascript", "coffee"]
+    "items": ["ruby", "go", "php", "javascript"]
   },
   {
     "group": "Frameworks",
-    "items": ["ruby on rails", "yii", "angularjs"]
+    "items": ["ruby on rails", "ReactJS"]
   },
   {
     "group": "DevOps",
-    "items": ["linux", "docker", "makefile", "apache", "nginx", "supervisor", "etc."]
+    "items": ["linux", "docker", "makefile", "nginx", "systemd", "etc."]
   },
   {
     "group": "SQL",
-    "items": ["mysql", "postgresql"]
+    "items": ["postgresql", "mysql"]
   },
   {
     "group": "NoSQL",
@@ -28,23 +28,15 @@
     "items": ["elasticsearch", "sphinx"]
   },
   {
-    "group": "Libs",
-    "items": ["underscorejs", "jquery", "etc."]
-  },
-  {
     "group": "VCS",
     "items": ["git"]
   },
   {
-    "group": "Package managers",
-    "items": ["rubygems", "npm", "composer", "bower"]
-  },
-  {
-    "group": "Deploy",
-    "items": ["jenkins", "capistrano"]
+    "group": "CI/CD",
+    "items": ["circle ci", "docker", "jenkins", "capistrano"]
   },
   {
     "group": "IDE",
-    "items": ["phpstorm", "atom"]
+    "items": ["rubymine", "atom", "vim"]
   }
 ]

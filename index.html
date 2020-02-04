@@ -66,6 +66,12 @@
 
                 <div ng-include="'src/views/' + lang + '/resume.html'"></div>
 
+                <div ng-include="'src/views/' + lang + '/skills.html'"></div>
+
+                <br/>
+                <h3 style="margin-top: 0;">{{ translate['portfolio'] }}</h3>
+                <div ng-include="'src/views/' + lang + '/portfolio.html'"></div>
+
                 <hr>
                 <h3>{{ translate['education'] }}</h3>
 
@@ -91,8 +97,6 @@
                 <hr>
                 <h3>{{ translate['skills'] }}</h3>
 
-                <div ng-include="'src/views/' + lang + '/skills.html'"></div>
-
                 <div class="small">
                     <div ng-repeat="skill in skills">
                         <strong>{{ skill.group }}</strong>:
@@ -101,7 +105,6 @@
                         </span>
                     </div>
                 </div>
-
             </section>
         </div>
     </div>
